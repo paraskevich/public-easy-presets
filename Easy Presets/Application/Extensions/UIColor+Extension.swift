@@ -8,22 +8,10 @@
 import UIKit
 
 extension UIColor {
-    
-    static var darkBlackColor: UIColor {
-        requiredColor("DarkBlackColor")
-    }
-    
-    static var generalBackgroundColor: UIColor {
-        requiredColor("GeneralBackgroundColor")
-    }
-    
-    static var primaryButtonColor: UIColor {
-        requiredColor("PrimaryButtonColor")
-    }
-    
-    static var primaryTextColor: UIColor {
-        requiredColor("PrimaryTextColor")
-    }
+    static var darkBlackColor: UIColor { requiredColor("DarkBlackColor") }
+    static var generalBackgroundColor: UIColor { requiredColor("GeneralBackgroundColor") }
+    static var primaryButtonColor: UIColor { requiredColor("PrimaryButtonColor") }
+    static var primaryTextColor: UIColor { requiredColor("PrimaryTextColor") }
 }
 
 // MARK: - Helper

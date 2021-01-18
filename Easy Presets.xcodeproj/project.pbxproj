@@ -21,6 +21,9 @@
 		31A44DB125ADD8F600DEEC67 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31A44DB025ADD8F600DEEC67 /* Nunito-Regular.ttf */; };
 		31A44DB725ADDAA600DEEC67 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44DB625ADDAA600DEEC67 /* UIFont+Extension.swift */; };
 		31A44DCF25AE48AA00DEEC67 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44DCE25AE48AA00DEEC67 /* UIColor+Extension.swift */; };
+		31A44DD525AE566000DEEC67 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44DD425AE566000DEEC67 /* OnboardingViewController.swift */; };
+		31A44DDE25AF975100DEEC67 /* OnboardingImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A44DDD25AF975100DEEC67 /* OnboardingImages.xcassets */; };
+		31A44DE625B095F200DEEC67 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44DE525B095F200DEEC67 /* OnboardingPageView.swift */; };
 		E26268B26AD266C931927F35 /* Pods_Easy_Presets_Easy_PresetsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF01754D6B2215DF123215C /* Pods_Easy_Presets_Easy_PresetsUITests.framework */; };
 		E27F06F085C166774CBD26B1 /* Pods_Easy_Presets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194A73FCA5DCAF8940F51BD1 /* Pods_Easy_Presets.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +66,9 @@
 		31A44DB025ADD8F600DEEC67 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-Regular.ttf"; path = "../../../../../Downloads/Nunito/Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		31A44DB625ADDAA600DEEC67 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		31A44DCE25AE48AA00DEEC67 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		31A44DD425AE566000DEEC67 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		31A44DDD25AF975100DEEC67 /* OnboardingImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = OnboardingImages.xcassets; sourceTree = "<group>"; };
+		31A44DE525B095F200DEEC67 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		4ACD9C6B12424666293F4348 /* Pods-Easy Presets-Easy PresetsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Easy Presets-Easy PresetsUITests.release.xcconfig"; path = "Target Support Files/Pods-Easy Presets-Easy PresetsUITests/Pods-Easy Presets-Easy PresetsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		84F823E2602560213A69CBB7 /* Pods-Easy PresetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Easy PresetsTests.debug.xcconfig"; path = "Target Support Files/Pods-Easy PresetsTests/Pods-Easy PresetsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		88F34703D208E2D282643A38 /* Pods-Easy PresetsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Easy PresetsTests.release.xcconfig"; path = "Target Support Files/Pods-Easy PresetsTests/Pods-Easy PresetsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 				31A44DA525ADD83900DEEC67 /* Fonts */,
 				31A44D3325ACCC1B00DEEC67 /* Assets.xcassets */,
 				31A44DA025ADCE1300DEEC67 /* Colors.xcassets */,
+				31A44DDD25AF975100DEEC67 /* OnboardingImages.xcassets */,
 				31A44D3825ACCC1B00DEEC67 /* Info.plist */,
 				31A44D6A25ACD37700DEEC67 /* Storyboards */,
 			);
@@ -251,6 +258,7 @@
 		31A44D6F25ACD3EC00DEEC67 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				31A44DE525B095F200DEEC67 /* OnboardingPageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -265,6 +273,7 @@
 		31A44D7125ACD40A00DEEC67 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				31A44DD425AE566000DEEC67 /* OnboardingViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -425,6 +434,7 @@
 				31A44D3225ACCC1700DEEC67 /* Main.storyboard in Resources */,
 				31A44DB125ADD8F600DEEC67 /* Nunito-Regular.ttf in Resources */,
 				31A44DAC25ADD8D700DEEC67 /* Nunito-Bold.ttf in Resources */,
+				31A44DDE25AF975100DEEC67 /* OnboardingImages.xcassets in Resources */,
 				31A44DA725ADD8C800DEEC67 /* Nunito-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,8 +563,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A44DE625B095F200DEEC67 /* OnboardingPageView.swift in Sources */,
 				31A44D2B25ACCC1700DEEC67 /* AppDelegate.swift in Sources */,
 				31A44DB725ADDAA600DEEC67 /* UIFont+Extension.swift in Sources */,
+				31A44DD525AE566000DEEC67 /* OnboardingViewController.swift in Sources */,
 				31A44D2D25ACCC1700DEEC67 /* SceneDelegate.swift in Sources */,
 				31A44DCF25AE48AA00DEEC67 /* UIColor+Extension.swift in Sources */,
 			);
@@ -662,7 +674,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -717,7 +729,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -743,7 +755,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Paraskevich.Easy-Presets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -763,7 +775,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Paraskevich.Easy-Presets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
