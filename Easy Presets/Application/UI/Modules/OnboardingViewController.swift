@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol OnboardingDelegate: AnyObject {
+    func onboardingViewControllerDidFinish(_ controller: OnboardingViewController)
+}
+
 class OnboardingViewController: UIViewController {
     
     // MARK: - Types
@@ -54,6 +58,8 @@ class OnboardingViewController: UIViewController {
                            text: Constants.Strings.thirsPageLabelText)
     ]
     
+    weak var delegate: OnboardingDelegate?
+    
     // MARK: - GUI
     
     private lazy var scrollView = UIScrollView()
@@ -90,13 +96,13 @@ class OnboardingViewController: UIViewController {
         view.addSubview(scrollView)
         configureScrollView()
         
-        view.addSubview(nextButton)
-        
         view.addSubview(pageControl)
         pageControl.addTarget(self,
                               action: #selector(pageControlDidChange(_:)),
                               for: .valueChanged)
         setupLabels()
+        
+        view.addSubview(nextButton)
         setNextButtonConstraints()
     }
     
@@ -188,6 +194,7 @@ class OnboardingViewController: UIViewController {
     }
     
     @objc private func nextButtonPressed() {
+        delegate?.onboardingViewControllerDidFinish(self)
     }
 }
 
