@@ -11,16 +11,14 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var coordinator: AppFlowCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = scene as? UIWindowScene else { return }
         let window = UIWindow(windowScene: windowScene)
-        
-        // TODO: - Remove next 2 lines when App Flow is implemented
-        let onboardingViewController = OnboardingViewController()
-        window.rootViewController = onboardingViewController
-        
+        self.coordinator = AppFlowCoordinator(with: window)
+        self.coordinator?.start()
         self.window = window
         window.makeKeyAndVisible()
     }
