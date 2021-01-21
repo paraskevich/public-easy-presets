@@ -65,7 +65,9 @@ class AppFlowCoordinator {
     }
     
     func runHome(in window: UIWindow) {
-        preconditionFailure("Not implemented")
+        let tabBarController = TabBarController()
+        window.rootViewController = tabBarController
+        window.makeKeyAndVisible()
     }
 }
 

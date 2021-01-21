@@ -12,6 +12,7 @@ extension UIColor {
     static var generalBackgroundColor: UIColor { requiredColor("GeneralBackgroundColor") }
     static var primaryButtonColor: UIColor { requiredColor("PrimaryButtonColor") }
     static var primaryTextColor: UIColor { requiredColor("PrimaryTextColor") }
+    static var appGrayColor: UIColor { requiredColor("AppGrayColor") }
 }
 
 // MARK: - Helper

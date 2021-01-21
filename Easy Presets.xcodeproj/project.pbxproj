@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		18A16CF5E806F7ABB1662C50 /* Pods_Easy_PresetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959E131170F36BA49527D001 /* Pods_Easy_PresetsTests.framework */; };
+		3167603925B8DA2A00A5EAA7 /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167603825B8DA2A00A5EAA7 /* MyCollectionViewController.swift */; };
+		3167603E25B8DAEC00A5EAA7 /* HowItWorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167603D25B8DAEC00A5EAA7 /* HowItWorksViewController.swift */; };
+		3167604325B8DB2600A5EAA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167604225B8DB2600A5EAA7 /* SettingsViewController.swift */; };
+		3167604C25B8DC1300A5EAA7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167604B25B8DC1300A5EAA7 /* TabBarController.swift */; };
 		31A44D2B25ACCC1700DEEC67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44D2A25ACCC1700DEEC67 /* AppDelegate.swift */; };
 		31A44D2D25ACCC1700DEEC67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44D2C25ACCC1700DEEC67 /* SceneDelegate.swift */; };
 		31A44D3225ACCC1700DEEC67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A44D3025ACCC1700DEEC67 /* Main.storyboard */; };
@@ -25,6 +29,7 @@
 		31A44DDE25AF975100DEEC67 /* OnboardingImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A44DDD25AF975100DEEC67 /* OnboardingImages.xcassets */; };
 		31A44DE625B095F200DEEC67 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44DE525B095F200DEEC67 /* OnboardingPageView.swift */; };
 		31CA0D9725B75C9E009B5314 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CA0D9625B75C9E009B5314 /* AppFlowCoordinator.swift */; };
+		31CA0DB025B8D879009B5314 /* PresetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CA0DAF25B8D879009B5314 /* PresetsViewController.swift */; };
 		E26268B26AD266C931927F35 /* Pods_Easy_Presets_Easy_PresetsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF01754D6B2215DF123215C /* Pods_Easy_Presets_Easy_PresetsUITests.framework */; };
 		E27F06F085C166774CBD26B1 /* Pods_Easy_Presets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194A73FCA5DCAF8940F51BD1 /* Pods_Easy_Presets.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +53,10 @@
 
 /* Begin PBXFileReference section */
 		194A73FCA5DCAF8940F51BD1 /* Pods_Easy_Presets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Easy_Presets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3167603825B8DA2A00A5EAA7 /* MyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
+		3167603D25B8DAEC00A5EAA7 /* HowItWorksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorksViewController.swift; sourceTree = "<group>"; };
+		3167604225B8DB2600A5EAA7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3167604B25B8DC1300A5EAA7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		31A44D2725ACCC1700DEEC67 /* Easy Presets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Presets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A44D2A25ACCC1700DEEC67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31A44D2C25ACCC1700DEEC67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +80,7 @@
 		31A44DDD25AF975100DEEC67 /* OnboardingImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = OnboardingImages.xcassets; sourceTree = "<group>"; };
 		31A44DE525B095F200DEEC67 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		31CA0D9625B75C9E009B5314 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
+		31CA0DAF25B8D879009B5314 /* PresetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsViewController.swift; sourceTree = "<group>"; };
 		4ACD9C6B12424666293F4348 /* Pods-Easy Presets-Easy PresetsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Easy Presets-Easy PresetsUITests.release.xcconfig"; path = "Target Support Files/Pods-Easy Presets-Easy PresetsUITests/Pods-Easy Presets-Easy PresetsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		84F823E2602560213A69CBB7 /* Pods-Easy PresetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Easy PresetsTests.debug.xcconfig"; path = "Target Support Files/Pods-Easy PresetsTests/Pods-Easy PresetsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		88F34703D208E2D282643A38 /* Pods-Easy PresetsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Easy PresetsTests.release.xcconfig"; path = "Target Support Files/Pods-Easy PresetsTests/Pods-Easy PresetsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +119,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3167604725B8DB9B00A5EAA7 /* HomeFlow */ = {
+			isa = PBXGroup;
+			children = (
+				3167604B25B8DC1300A5EAA7 /* TabBarController.swift */,
+				31CA0DAB25B8D778009B5314 /* Presets */,
+				31CA0DAC25B8D784009B5314 /* MyCollection */,
+				31CA0DAD25B8D78E009B5314 /* HowItWorks */,
+				31CA0DAE25B8D796009B5314 /* Settings */,
+			);
+			path = HomeFlow;
+			sourceTree = "<group>";
+		};
 		31A44D1E25ACCC1700DEEC67 = {
 			isa = PBXGroup;
 			children = (
@@ -276,7 +298,8 @@
 		31A44D7125ACD40A00DEEC67 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				31A44DD425AE566000DEEC67 /* OnboardingViewController.swift */,
+				31CA0DAA25B8D76B009B5314 /* OnboardingFlow */,
+				3167604725B8DB9B00A5EAA7 /* HomeFlow */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -298,6 +321,46 @@
 				31A44DCE25AE48AA00DEEC67 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		31CA0DAA25B8D76B009B5314 /* OnboardingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				31A44DD425AE566000DEEC67 /* OnboardingViewController.swift */,
+			);
+			path = OnboardingFlow;
+			sourceTree = "<group>";
+		};
+		31CA0DAB25B8D778009B5314 /* Presets */ = {
+			isa = PBXGroup;
+			children = (
+				31CA0DAF25B8D879009B5314 /* PresetsViewController.swift */,
+			);
+			path = Presets;
+			sourceTree = "<group>";
+		};
+		31CA0DAC25B8D784009B5314 /* MyCollection */ = {
+			isa = PBXGroup;
+			children = (
+				3167603825B8DA2A00A5EAA7 /* MyCollectionViewController.swift */,
+			);
+			path = MyCollection;
+			sourceTree = "<group>";
+		};
+		31CA0DAD25B8D78E009B5314 /* HowItWorks */ = {
+			isa = PBXGroup;
+			children = (
+				3167603D25B8DAEC00A5EAA7 /* HowItWorksViewController.swift */,
+			);
+			path = HowItWorks;
+			sourceTree = "<group>";
+		};
+		31CA0DAE25B8D796009B5314 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3167604225B8DB2600A5EAA7 /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		61E5844F4DBC78715F31C807 /* Pods */ = {
@@ -568,11 +631,16 @@
 			files = (
 				31A44DE625B095F200DEEC67 /* OnboardingPageView.swift in Sources */,
 				31A44D2B25ACCC1700DEEC67 /* AppDelegate.swift in Sources */,
+				3167604325B8DB2600A5EAA7 /* SettingsViewController.swift in Sources */,
 				31A44DB725ADDAA600DEEC67 /* UIFont+Extension.swift in Sources */,
+				31CA0DB025B8D879009B5314 /* PresetsViewController.swift in Sources */,
 				31CA0D9725B75C9E009B5314 /* AppFlowCoordinator.swift in Sources */,
+				3167603925B8DA2A00A5EAA7 /* MyCollectionViewController.swift in Sources */,
 				31A44DD525AE566000DEEC67 /* OnboardingViewController.swift in Sources */,
 				31A44D2D25ACCC1700DEEC67 /* SceneDelegate.swift in Sources */,
+				3167604C25B8DC1300A5EAA7 /* TabBarController.swift in Sources */,
 				31A44DCF25AE48AA00DEEC67 /* UIColor+Extension.swift in Sources */,
+				3167603E25B8DAEC00A5EAA7 /* HowItWorksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
