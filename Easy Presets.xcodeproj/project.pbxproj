@@ -12,6 +12,9 @@
 		3167603E25B8DAEC00A5EAA7 /* HowItWorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167603D25B8DAEC00A5EAA7 /* HowItWorksViewController.swift */; };
 		3167604325B8DB2600A5EAA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167604225B8DB2600A5EAA7 /* SettingsViewController.swift */; };
 		3167604C25B8DC1300A5EAA7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167604B25B8DC1300A5EAA7 /* TabBarController.swift */; };
+		3167607525BA294E00A5EAA7 /* FeedPresetCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167607425BA294E00A5EAA7 /* FeedPresetCollectionCell.swift */; };
+		3167607A25BA30CB00A5EAA7 /* FeedPresetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167607925BA30CB00A5EAA7 /* FeedPresetViewModel.swift */; };
+		3167608725BC3BC200A5EAA7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167608625BC3BC200A5EAA7 /* UIViewController+Extension.swift */; };
 		31A44D2B25ACCC1700DEEC67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44D2A25ACCC1700DEEC67 /* AppDelegate.swift */; };
 		31A44D2D25ACCC1700DEEC67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44D2C25ACCC1700DEEC67 /* SceneDelegate.swift */; };
 		31A44D3225ACCC1700DEEC67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A44D3025ACCC1700DEEC67 /* Main.storyboard */; };
@@ -57,6 +60,9 @@
 		3167603D25B8DAEC00A5EAA7 /* HowItWorksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorksViewController.swift; sourceTree = "<group>"; };
 		3167604225B8DB2600A5EAA7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3167604B25B8DC1300A5EAA7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3167607425BA294E00A5EAA7 /* FeedPresetCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresetCollectionCell.swift; sourceTree = "<group>"; };
+		3167607925BA30CB00A5EAA7 /* FeedPresetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresetViewModel.swift; sourceTree = "<group>"; };
+		3167608625BC3BC200A5EAA7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		31A44D2725ACCC1700DEEC67 /* Easy Presets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Presets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A44D2A25ACCC1700DEEC67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31A44D2C25ACCC1700DEEC67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +250,7 @@
 		31A44D6725ACD30F00DEEC67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3167607925BA30CB00A5EAA7 /* FeedPresetViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,6 +298,7 @@
 		31A44D7025ACD3F300DEEC67 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3167607425BA294E00A5EAA7 /* FeedPresetCollectionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -319,6 +327,7 @@
 			children = (
 				31A44DB625ADDAA600DEEC67 /* UIFont+Extension.swift */,
 				31A44DCE25AE48AA00DEEC67 /* UIColor+Extension.swift */,
+				3167608625BC3BC200A5EAA7 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -629,6 +638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3167607525BA294E00A5EAA7 /* FeedPresetCollectionCell.swift in Sources */,
 				31A44DE625B095F200DEEC67 /* OnboardingPageView.swift in Sources */,
 				31A44D2B25ACCC1700DEEC67 /* AppDelegate.swift in Sources */,
 				3167604325B8DB2600A5EAA7 /* SettingsViewController.swift in Sources */,
@@ -636,7 +646,9 @@
 				31CA0DB025B8D879009B5314 /* PresetsViewController.swift in Sources */,
 				31CA0D9725B75C9E009B5314 /* AppFlowCoordinator.swift in Sources */,
 				3167603925B8DA2A00A5EAA7 /* MyCollectionViewController.swift in Sources */,
+				3167608725BC3BC200A5EAA7 /* UIViewController+Extension.swift in Sources */,
 				31A44DD525AE566000DEEC67 /* OnboardingViewController.swift in Sources */,
+				3167607A25BA30CB00A5EAA7 /* FeedPresetViewModel.swift in Sources */,
 				31A44D2D25ACCC1700DEEC67 /* SceneDelegate.swift in Sources */,
 				3167604C25B8DC1300A5EAA7 /* TabBarController.swift in Sources */,
 				31A44DCF25AE48AA00DEEC67 /* UIColor+Extension.swift in Sources */,

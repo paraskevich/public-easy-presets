@@ -29,10 +29,10 @@ class TabBarController: UITabBarController {
     
     // MARK: - Properties
     
-    private let presetsViewController = PresetsViewController()
-    private let myCollectionViewController = MyCollectionViewController()
-    private let howItWorksViewController = HowItWorksViewController()
-    private let settingsViewController = SettingsViewController()
+    private let presetsNavigationController = UINavigationController(rootViewController: PresetsViewController())
+    private let myCollectionNavigationController = UINavigationController(rootViewController: MyCollectionViewController())
+    private let howItWorksNavigationController = UINavigationController(rootViewController: HowItWorksViewController())
+    private let settingsNavigationController = UINavigationController(rootViewController: SettingsViewController())
 
     // MARK: - View life cycle
     
@@ -45,23 +45,23 @@ class TabBarController: UITabBarController {
     // MARK: - Methods
     
     private func setupTabBar() {
-        presetsViewController.tabBarItem = UITabBarItem(title: Constants.TabName.presets,
+        presetsNavigationController.tabBarItem = UITabBarItem(title: Constants.TabName.presets,
                                                         image: UIImage(named: Constants.TabIcon.presets),
                                                         selectedImage: nil)
-        myCollectionViewController.tabBarItem = UITabBarItem(title: Constants.TabName.myCollection,
+        myCollectionNavigationController.tabBarItem = UITabBarItem(title: Constants.TabName.myCollection,
                                                              image: UIImage(named: Constants.TabIcon.myCollection),
                                                              selectedImage: nil)
-        howItWorksViewController.tabBarItem = UITabBarItem(title: Constants.TabName.howItWorks,
+        howItWorksNavigationController.tabBarItem = UITabBarItem(title: Constants.TabName.howItWorks,
                                                            image: UIImage(named: Constants.TabIcon.howItWorks),
                                                            selectedImage: nil)
-        settingsViewController.tabBarItem = UITabBarItem(title: Constants.TabName.settings,
+        settingsNavigationController.tabBarItem = UITabBarItem(title: Constants.TabName.settings,
                                                          image: UIImage(named: Constants.TabIcon.settings),
                                                          selectedImage: nil)
         let tabBarList = [
-            presetsViewController,
-            myCollectionViewController,
-            howItWorksViewController,
-            settingsViewController
+            presetsNavigationController,
+            myCollectionNavigationController,
+            howItWorksNavigationController,
+            settingsNavigationController
         ]
         self.viewControllers = tabBarList
         self.tabBar.tintColor = .primaryTextColor

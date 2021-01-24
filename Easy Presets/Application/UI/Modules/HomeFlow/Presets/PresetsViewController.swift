@@ -9,9 +9,65 @@ import UIKit
 
 class PresetsViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .red 
+    // MARK: - Types
+    
+    private enum Constants {
+        static var title: String { "Presets" }
     }
     
+    // MARK: - GUI
+    
+    private var collectionView: UICollectionView = {
+        let collectionView = UICollectionView()
+        return collectionView
+    }()
+    
+    // MARK: - View life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.title = Constants.title
+        setNavigationBarAppearance(for: self)
+        
+        collectionView.backgroundColor = .generalBackgroundColor
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.frame = CGRect(x: 0, y: 0,
+                                      width: view.frame.width,
+                                      height: view.frame.height)
+    }
+    
+    // MARK: - Methods
+    
+    
+    
 }
+
+//MARK: - Collection view delegate & data source
+
+extension PresetsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        preconditionFailure()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        preconditionFailure()
+    }
+    
+    
+}
+
+// MARK: - Collection view delegate flow layout
+
+extension PresetsViewController: UICollectionViewDelegateFlowLayout {
+    
+}
+
+

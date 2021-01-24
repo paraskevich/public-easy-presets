@@ -48,15 +48,15 @@ class OnboardingPageView: UIView {
     private func setConstraints() {
         
         // Image constraints
-        self.imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        self.imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        self.imageView.heightAnchor.constraint(equalTo: self.heightAnchor).isActive = true
-        self.imageView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        imageView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         
         // Label constraints
-        self.label.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        self.label.centerYAnchor.constraint(equalTo: self.bottomAnchor, constant: -300).isActive = true
-        self.label.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
-        self.label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: bottomAnchor, constant: -300).isActive = true
+        label.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
+        label.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
     }
 }
