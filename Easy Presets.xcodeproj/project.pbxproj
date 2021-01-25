@@ -31,6 +31,10 @@
 		31A44DD525AE566000DEEC67 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44DD425AE566000DEEC67 /* OnboardingViewController.swift */; };
 		31A44DDE25AF975100DEEC67 /* OnboardingImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A44DDD25AF975100DEEC67 /* OnboardingImages.xcassets */; };
 		31A44DE625B095F200DEEC67 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44DE525B095F200DEEC67 /* OnboardingPageView.swift */; };
+		31C1695E25BDB24700F8206E /* PresetsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C1695D25BDB24700F8206E /* PresetsCategory.swift */; };
+		31C1696825BDB49C00F8206E /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C1696725BDB49C00F8206E /* Preset.swift */; };
+		31C1697125BDB64500F8206E /* PresetsCategoryRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C1697025BDB64500F8206E /* PresetsCategoryRealm.swift */; };
+		31C1697B25BDC00200F8206E /* PresetRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C1697A25BDC00200F8206E /* PresetRealm.swift */; };
 		31CA0D9725B75C9E009B5314 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CA0D9625B75C9E009B5314 /* AppFlowCoordinator.swift */; };
 		31CA0DB025B8D879009B5314 /* PresetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CA0DAF25B8D879009B5314 /* PresetsViewController.swift */; };
 		E26268B26AD266C931927F35 /* Pods_Easy_Presets_Easy_PresetsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF01754D6B2215DF123215C /* Pods_Easy_Presets_Easy_PresetsUITests.framework */; };
@@ -85,6 +89,10 @@
 		31A44DD425AE566000DEEC67 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		31A44DDD25AF975100DEEC67 /* OnboardingImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = OnboardingImages.xcassets; sourceTree = "<group>"; };
 		31A44DE525B095F200DEEC67 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
+		31C1695D25BDB24700F8206E /* PresetsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsCategory.swift; sourceTree = "<group>"; };
+		31C1696725BDB49C00F8206E /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
+		31C1697025BDB64500F8206E /* PresetsCategoryRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsCategoryRealm.swift; sourceTree = "<group>"; };
+		31C1697A25BDC00200F8206E /* PresetRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetRealm.swift; sourceTree = "<group>"; };
 		31CA0D9625B75C9E009B5314 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		31CA0DAF25B8D879009B5314 /* PresetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsViewController.swift; sourceTree = "<group>"; };
 		4ACD9C6B12424666293F4348 /* Pods-Easy Presets-Easy PresetsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Easy Presets-Easy PresetsUITests.release.xcconfig"; path = "Target Support Files/Pods-Easy Presets-Easy PresetsUITests/Pods-Easy Presets-Easy PresetsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,7 +248,7 @@
 		31A44D6625ACD2FF00DEEC67 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				31A44D6725ACD30F00DEEC67 /* Model */,
+				31C1699325BE101100F8206E /* Realm */,
 				31A44D6825ACD32B00DEEC67 /* Manager */,
 				31A44D6925ACD33000DEEC67 /* Store */,
 			);
@@ -251,8 +259,11 @@
 			isa = PBXGroup;
 			children = (
 				3167607925BA30CB00A5EAA7 /* FeedPresetViewModel.swift */,
+				31C1695D25BDB24700F8206E /* PresetsCategory.swift */,
+				31C1696725BDB49C00F8206E /* Preset.swift */,
 			);
-			path = Model;
+			name = Model;
+			path = ../Model;
 			sourceTree = "<group>";
 		};
 		31A44D6825ACD32B00DEEC67 /* Manager */ = {
@@ -330,6 +341,24 @@
 				3167608625BC3BC200A5EAA7 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		31C1699325BE101100F8206E /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				31A44D6725ACD30F00DEEC67 /* Model */,
+				31C1699425BE101900F8206E /* Model */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		31C1699425BE101900F8206E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				31C1697025BDB64500F8206E /* PresetsCategoryRealm.swift */,
+				31C1697A25BDC00200F8206E /* PresetRealm.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		31CA0DAA25B8D76B009B5314 /* OnboardingFlow */ = {
@@ -641,15 +670,19 @@
 				3167607525BA294E00A5EAA7 /* FeedPresetCollectionCell.swift in Sources */,
 				31A44DE625B095F200DEEC67 /* OnboardingPageView.swift in Sources */,
 				31A44D2B25ACCC1700DEEC67 /* AppDelegate.swift in Sources */,
+				31C1696825BDB49C00F8206E /* Preset.swift in Sources */,
 				3167604325B8DB2600A5EAA7 /* SettingsViewController.swift in Sources */,
+				31C1695E25BDB24700F8206E /* PresetsCategory.swift in Sources */,
 				31A44DB725ADDAA600DEEC67 /* UIFont+Extension.swift in Sources */,
 				31CA0DB025B8D879009B5314 /* PresetsViewController.swift in Sources */,
 				31CA0D9725B75C9E009B5314 /* AppFlowCoordinator.swift in Sources */,
 				3167603925B8DA2A00A5EAA7 /* MyCollectionViewController.swift in Sources */,
 				3167608725BC3BC200A5EAA7 /* UIViewController+Extension.swift in Sources */,
 				31A44DD525AE566000DEEC67 /* OnboardingViewController.swift in Sources */,
+				31C1697125BDB64500F8206E /* PresetsCategoryRealm.swift in Sources */,
 				3167607A25BA30CB00A5EAA7 /* FeedPresetViewModel.swift in Sources */,
 				31A44D2D25ACCC1700DEEC67 /* SceneDelegate.swift in Sources */,
+				31C1697B25BDC00200F8206E /* PresetRealm.swift in Sources */,
 				3167604C25B8DC1300A5EAA7 /* TabBarController.swift in Sources */,
 				31A44DCF25AE48AA00DEEC67 /* UIColor+Extension.swift in Sources */,
 				3167603E25B8DAEC00A5EAA7 /* HowItWorksViewController.swift in Sources */,
