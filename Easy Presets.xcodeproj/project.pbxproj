@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		18A16CF5E806F7ABB1662C50 /* Pods_Easy_PresetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959E131170F36BA49527D001 /* Pods_Easy_PresetsTests.framework */; };
 		3118A83B25BF471C002450AD /* PresetsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3118A83A25BF471C002450AD /* PresetsProvider.swift */; };
+		315B22A625CC45170048D05B /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 315B22A325CC45170048D05B /* Nunito-Regular.ttf */; };
+		315B22A725CC45170048D05B /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 315B22A425CC45170048D05B /* Nunito-SemiBold.ttf */; };
+		315B22A825CC45170048D05B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 315B22A525CC45170048D05B /* Nunito-Bold.ttf */; };
 		3167603925B8DA2A00A5EAA7 /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167603825B8DA2A00A5EAA7 /* MyCollectionViewController.swift */; };
 		3167603E25B8DAEC00A5EAA7 /* HowItWorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167603D25B8DAEC00A5EAA7 /* HowItWorksViewController.swift */; };
 		3167604325B8DB2600A5EAA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167604225B8DB2600A5EAA7 /* SettingsViewController.swift */; };
@@ -18,6 +21,7 @@
 		3167608725BC3BC200A5EAA7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167608625BC3BC200A5EAA7 /* UIViewController+Extension.swift */; };
 		3182656E25BF5FE4003FFF93 /* RealmPresetsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182656D25BF5FE4003FFF93 /* RealmPresetsProvider.swift */; };
 		3182657325C026E4003FFF93 /* AppServicesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182657225C026E4003FFF93 /* AppServicesContainer.swift */; };
+		319BFD9225C58C7400EB4759 /* presets.json in Resources */ = {isa = PBXBuildFile; fileRef = 319BFD9125C58C7400EB4759 /* presets.json */; };
 		31A44D2B25ACCC1700DEEC67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44D2A25ACCC1700DEEC67 /* AppDelegate.swift */; };
 		31A44D2D25ACCC1700DEEC67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44D2C25ACCC1700DEEC67 /* SceneDelegate.swift */; };
 		31A44D3225ACCC1700DEEC67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A44D3025ACCC1700DEEC67 /* Main.storyboard */; };
@@ -26,9 +30,6 @@
 		31A44D4225ACCC1C00DEEC67 /* Easy_PresetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44D4125ACCC1C00DEEC67 /* Easy_PresetsTests.swift */; };
 		31A44D4D25ACCC1C00DEEC67 /* Easy_PresetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44D4C25ACCC1C00DEEC67 /* Easy_PresetsUITests.swift */; };
 		31A44DA125ADCE1300DEEC67 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A44DA025ADCE1300DEEC67 /* Colors.xcassets */; };
-		31A44DA725ADD8C800DEEC67 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31A44DA625ADD8C800DEEC67 /* Nunito-SemiBold.ttf */; };
-		31A44DAC25ADD8D700DEEC67 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31A44DAB25ADD8D700DEEC67 /* Nunito-Bold.ttf */; };
-		31A44DB125ADD8F600DEEC67 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 31A44DB025ADD8F600DEEC67 /* Nunito-Regular.ttf */; };
 		31A44DB725ADDAA600DEEC67 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44DB625ADDAA600DEEC67 /* UIFont+Extension.swift */; };
 		31A44DCF25AE48AA00DEEC67 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44DCE25AE48AA00DEEC67 /* UIColor+Extension.swift */; };
 		31A44DD525AE566000DEEC67 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44DD425AE566000DEEC67 /* OnboardingViewController.swift */; };
@@ -64,6 +65,9 @@
 /* Begin PBXFileReference section */
 		194A73FCA5DCAF8940F51BD1 /* Pods_Easy_Presets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Easy_Presets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3118A83A25BF471C002450AD /* PresetsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsProvider.swift; sourceTree = "<group>"; };
+		315B22A325CC45170048D05B /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		315B22A425CC45170048D05B /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		315B22A525CC45170048D05B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		3167603825B8DA2A00A5EAA7 /* MyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
 		3167603D25B8DAEC00A5EAA7 /* HowItWorksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorksViewController.swift; sourceTree = "<group>"; };
 		3167604225B8DB2600A5EAA7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 		3167608625BC3BC200A5EAA7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		3182656D25BF5FE4003FFF93 /* RealmPresetsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPresetsProvider.swift; sourceTree = "<group>"; };
 		3182657225C026E4003FFF93 /* AppServicesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServicesContainer.swift; sourceTree = "<group>"; };
+		319BFD9125C58C7400EB4759 /* presets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = presets.json; path = ../../../../../../../presets.json; sourceTree = "<group>"; };
 		31A44D2725ACCC1700DEEC67 /* Easy Presets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Presets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A44D2A25ACCC1700DEEC67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31A44D2C25ACCC1700DEEC67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,9 +92,6 @@
 		31A44D4C25ACCC1C00DEEC67 /* Easy_PresetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Easy_PresetsUITests.swift; sourceTree = "<group>"; };
 		31A44D4E25ACCC1C00DEEC67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31A44DA025ADCE1300DEEC67 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		31A44DA625ADD8C800DEEC67 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-SemiBold.ttf"; path = "../../../../../Downloads/Nunito/Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
-		31A44DAB25ADD8D700DEEC67 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-Bold.ttf"; path = "../../../../../Downloads/Nunito/Nunito-Bold.ttf"; sourceTree = "<group>"; };
-		31A44DB025ADD8F600DEEC67 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-Regular.ttf"; path = "../../../../../Downloads/Nunito/Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		31A44DB625ADDAA600DEEC67 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		31A44DCE25AE48AA00DEEC67 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		31A44DD425AE566000DEEC67 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		31A44D6925ACD33000DEEC67 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				319BFD9125C58C7400EB4759 /* presets.json */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -364,9 +367,9 @@
 		31A44DA525ADD83900DEEC67 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				31A44DA625ADD8C800DEEC67 /* Nunito-SemiBold.ttf */,
-				31A44DAB25ADD8D700DEEC67 /* Nunito-Bold.ttf */,
-				31A44DB025ADD8F600DEEC67 /* Nunito-Regular.ttf */,
+				315B22A525CC45170048D05B /* Nunito-Bold.ttf */,
+				315B22A325CC45170048D05B /* Nunito-Regular.ttf */,
+				315B22A425CC45170048D05B /* Nunito-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -572,14 +575,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				315B22A725CC45170048D05B /* Nunito-SemiBold.ttf in Resources */,
 				31A44D3725ACCC1B00DEEC67 /* LaunchScreen.storyboard in Resources */,
 				31A44DA125ADCE1300DEEC67 /* Colors.xcassets in Resources */,
+				319BFD9225C58C7400EB4759 /* presets.json in Resources */,
+				315B22A825CC45170048D05B /* Nunito-Bold.ttf in Resources */,
 				31A44D3425ACCC1B00DEEC67 /* Assets.xcassets in Resources */,
+				315B22A625CC45170048D05B /* Nunito-Regular.ttf in Resources */,
 				31A44D3225ACCC1700DEEC67 /* Main.storyboard in Resources */,
-				31A44DB125ADD8F600DEEC67 /* Nunito-Regular.ttf in Resources */,
-				31A44DAC25ADD8D700DEEC67 /* Nunito-Bold.ttf in Resources */,
 				31A44DDE25AF975100DEEC67 /* OnboardingImages.xcassets in Resources */,
-				31A44DA725ADD8C800DEEC67 /* Nunito-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

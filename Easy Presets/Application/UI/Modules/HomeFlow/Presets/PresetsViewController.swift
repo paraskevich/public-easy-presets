@@ -18,7 +18,8 @@ class PresetsViewController: UIViewController {
     // MARK: - GUI
     
     private var collectionView: UICollectionView = {
-        let collectionView = UICollectionView()
+        let collectionView = UICollectionView(frame: CGRect(),
+                                              collectionViewLayout: UICollectionViewLayout())
         return collectionView
     }()
     
