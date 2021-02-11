@@ -27,6 +27,7 @@ class PresetsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("PresetsVC loaded")
         
         self.title = Constants.title
         setNavigationBarAppearance(for: self)
@@ -34,8 +35,6 @@ class PresetsViewController: UIViewController {
         collectionView.backgroundColor = .generalBackgroundColor
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -61,8 +60,6 @@ extension PresetsViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         preconditionFailure()
     }
-    
-    
 }
 
 // MARK: - Collection view delegate flow layout

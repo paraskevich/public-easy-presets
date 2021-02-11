@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let window = self.window {
             self.coordinator = AppFlowCoordinator(with: window)
-            self.coordinator?.start()
+            self.coordinator?.runRequiredFlow()
         }
         
         return true

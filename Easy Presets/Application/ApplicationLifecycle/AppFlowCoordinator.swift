@@ -12,6 +12,7 @@ class AppFlowCoordinator {
     // MARK: - Types
     
     private enum Flow {
+        case configuration
         case onboarding
         case home
     }
@@ -23,13 +24,24 @@ class AppFlowCoordinator {
     // MARK: - Properties
     
     private var window = UIWindow()
+
     private var onboardingSeen: Bool {
         get {
-            return UserDefaults.standard.bool(forKey: Keys.onboardingSeen)
+            UserDefaults.standard.bool(forKey: Keys.onboardingSeen)
         }
         
         set {
             UserDefaults.standard.set(newValue, forKey: Keys.onboardingSeen)
+        }
+    }
+    
+    private var requiredFlow: Flow {
+        if AppConfiguratorController.isConfigurationRequired == true {
+            return .configuration
+        } else if onboardingSeen == false {
+            return .onboarding
+        } else {
+            return .home
         }
     }
     
@@ -41,20 +53,21 @@ class AppFlowCoordinator {
     
     // MARK: - Methods
     
-    private func requiredFlow() -> Flow {
-        if onboardingSeen == false {
-            return .onboarding
-        } else {
-            return .home
-        }
-    }
-    
-    func start() {
-        if requiredFlow() == .onboarding {
+    func runRequiredFlow() {
+        if requiredFlow == .configuration {
+            runAppConfigurator(in: self.window)
+        } else if requiredFlow == .onboarding {
             runOnboarding(in: self.window)
         } else {
             runHome(in: self.window)
         }
+    }
+    
+    func runAppConfigurator(in window: UIWindow) {
+        let appConfiguratorController = AppConfiguratorController()
+        appConfiguratorController.delegate = self
+        window.rootViewController = appConfiguratorController
+        window.makeKeyAndVisible()
     }
     
     func runOnboarding(in window: UIWindow) {
@@ -71,11 +84,17 @@ class AppFlowCoordinator {
     }
 }
 
-// MARK: - OnboardingDelegate
+// MARK: - Delegates
 
 extension AppFlowCoordinator: OnboardingDelegate {
     func onboardingViewControllerDidFinish(_ controller: OnboardingViewController) {
         onboardingSeen = true
         runHome(in: window)
+    }
+}
+
+extension AppFlowCoordinator: AppConfiguratorDelegate {
+    func appConfiguratorControllerDidFinish() {
+        runRequiredFlow()
     }
 }

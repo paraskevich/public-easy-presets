@@ -11,7 +11,7 @@ class PresetsCategoryRealm: Object, Decodable {
     @objc dynamic var title: String = ""
     @objc dynamic var id: String = ""
     var goodFor = List<String>()
-    @objc dynamic var preview = PreviewRealm()
+    @objc dynamic var preview: PreviewRealm?
     var presets = List<PresetRealm>()
     
     convenience init(title: String,
@@ -61,7 +61,12 @@ extension PresetsCategory {
         self.title = model.title
         self.id = model.id
         self.goodFor = Array(model.goodFor)
-        self.preview = Preview(with: model.preview)
+        
+        if let previewRealm = model.preview {
+            self.preview = Preview(with: previewRealm)
+        } else {
+            self.preview = Preview()
+        }
         
         var presets: [Preset] = []
         for realmPreset in model.presets {

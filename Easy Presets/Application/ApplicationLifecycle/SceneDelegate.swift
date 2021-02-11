@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
         let window = UIWindow(windowScene: windowScene)
         self.coordinator = AppFlowCoordinator(with: window)
-        self.coordinator?.start()
+        self.coordinator?.runRequiredFlow()
         self.window = window
         window.makeKeyAndVisible()
     }

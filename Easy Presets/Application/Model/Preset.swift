@@ -16,4 +16,10 @@ struct Preview {
     let path: String
     let width: Int
     let height: Int
+    
+    init() {
+        self.path = ""
+        self.width = 0
+        self.height = 0
+    }
 }

@@ -91,6 +91,7 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("OnboardingVC loaded")
         
         scrollView.delegate = self
         view.addSubview(scrollView)

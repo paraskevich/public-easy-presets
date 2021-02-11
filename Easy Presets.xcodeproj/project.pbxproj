@@ -12,6 +12,8 @@
 		315B22A625CC45170048D05B /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 315B22A325CC45170048D05B /* Nunito-Regular.ttf */; };
 		315B22A725CC45170048D05B /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 315B22A425CC45170048D05B /* Nunito-SemiBold.ttf */; };
 		315B22A825CC45170048D05B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 315B22A525CC45170048D05B /* Nunito-Bold.ttf */; };
+		315B22C125CF3BAC0048D05B /* AppConfiguratorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B22C025CF3BAC0048D05B /* AppConfiguratorController.swift */; };
+		315B22F425D5A7530048D05B /* presets.json in Resources */ = {isa = PBXBuildFile; fileRef = 315B22F325D5A7530048D05B /* presets.json */; };
 		3167603925B8DA2A00A5EAA7 /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167603825B8DA2A00A5EAA7 /* MyCollectionViewController.swift */; };
 		3167603E25B8DAEC00A5EAA7 /* HowItWorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167603D25B8DAEC00A5EAA7 /* HowItWorksViewController.swift */; };
 		3167604325B8DB2600A5EAA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167604225B8DB2600A5EAA7 /* SettingsViewController.swift */; };
@@ -21,7 +23,6 @@
 		3167608725BC3BC200A5EAA7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167608625BC3BC200A5EAA7 /* UIViewController+Extension.swift */; };
 		3182656E25BF5FE4003FFF93 /* RealmPresetsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182656D25BF5FE4003FFF93 /* RealmPresetsProvider.swift */; };
 		3182657325C026E4003FFF93 /* AppServicesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182657225C026E4003FFF93 /* AppServicesContainer.swift */; };
-		319BFD9225C58C7400EB4759 /* presets.json in Resources */ = {isa = PBXBuildFile; fileRef = 319BFD9125C58C7400EB4759 /* presets.json */; };
 		31A44D2B25ACCC1700DEEC67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44D2A25ACCC1700DEEC67 /* AppDelegate.swift */; };
 		31A44D2D25ACCC1700DEEC67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44D2C25ACCC1700DEEC67 /* SceneDelegate.swift */; };
 		31A44D3225ACCC1700DEEC67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A44D3025ACCC1700DEEC67 /* Main.storyboard */; };
@@ -68,6 +69,8 @@
 		315B22A325CC45170048D05B /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		315B22A425CC45170048D05B /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		315B22A525CC45170048D05B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		315B22C025CF3BAC0048D05B /* AppConfiguratorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguratorController.swift; sourceTree = "<group>"; };
+		315B22F325D5A7530048D05B /* presets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = presets.json; sourceTree = "<group>"; };
 		3167603825B8DA2A00A5EAA7 /* MyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
 		3167603D25B8DAEC00A5EAA7 /* HowItWorksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorksViewController.swift; sourceTree = "<group>"; };
 		3167604225B8DB2600A5EAA7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +80,6 @@
 		3167608625BC3BC200A5EAA7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		3182656D25BF5FE4003FFF93 /* RealmPresetsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPresetsProvider.swift; sourceTree = "<group>"; };
 		3182657225C026E4003FFF93 /* AppServicesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServicesContainer.swift; sourceTree = "<group>"; };
-		319BFD9125C58C7400EB4759 /* presets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = presets.json; path = ../../../../../../../presets.json; sourceTree = "<group>"; };
 		31A44D2725ACCC1700DEEC67 /* Easy Presets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Presets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A44D2A25ACCC1700DEEC67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31A44D2C25ACCC1700DEEC67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 				3167607925BA30CB00A5EAA7 /* FeedPresetViewModel.swift */,
 			);
 			path = FeedPreset;
+			sourceTree = "<group>";
+		};
+		315B22BF25CF3B380048D05B /* AppConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				315B22C025CF3BAC0048D05B /* AppConfiguratorController.swift */,
+			);
+			path = AppConfiguration;
 			sourceTree = "<group>";
 		};
 		3167604725B8DB9B00A5EAA7 /* HomeFlow */ = {
@@ -316,7 +326,7 @@
 		31A44D6925ACD33000DEEC67 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				319BFD9125C58C7400EB4759 /* presets.json */,
+				315B22F325D5A7530048D05B /* presets.json */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -358,6 +368,7 @@
 		31A44D7125ACD40A00DEEC67 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				315B22BF25CF3B380048D05B /* AppConfiguration */,
 				31CA0DAA25B8D76B009B5314 /* OnboardingFlow */,
 				3167604725B8DB9B00A5EAA7 /* HomeFlow */,
 			);
@@ -577,8 +588,8 @@
 			files = (
 				315B22A725CC45170048D05B /* Nunito-SemiBold.ttf in Resources */,
 				31A44D3725ACCC1B00DEEC67 /* LaunchScreen.storyboard in Resources */,
+				315B22F425D5A7530048D05B /* presets.json in Resources */,
 				31A44DA125ADCE1300DEEC67 /* Colors.xcassets in Resources */,
-				319BFD9225C58C7400EB4759 /* presets.json in Resources */,
 				315B22A825CC45170048D05B /* Nunito-Bold.ttf in Resources */,
 				31A44D3425ACCC1B00DEEC67 /* Assets.xcassets in Resources */,
 				315B22A625CC45170048D05B /* Nunito-Regular.ttf in Resources */,
@@ -728,6 +739,7 @@
 				31C1697125BDB64500F8206E /* PresetsCategoryRealm.swift in Sources */,
 				3167607A25BA30CB00A5EAA7 /* FeedPresetViewModel.swift in Sources */,
 				31A44D2D25ACCC1700DEEC67 /* SceneDelegate.swift in Sources */,
+				315B22C125CF3BAC0048D05B /* AppConfiguratorController.swift in Sources */,
 				31C1697B25BDC00200F8206E /* PresetRealm.swift in Sources */,
 				3167604C25B8DC1300A5EAA7 /* TabBarController.swift in Sources */,
 				31A44DCF25AE48AA00DEEC67 /* UIColor+Extension.swift in Sources */,

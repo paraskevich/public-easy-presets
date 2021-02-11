@@ -9,7 +9,7 @@ import RealmSwift
 
 class PresetRealm: Object, Decodable {
     @objc dynamic var title: String = ""
-    @objc dynamic var preview = PreviewRealm()
+    @objc dynamic var preview: PreviewRealm?
     
     enum CodingKeys: String, CodingKey {
         case title
@@ -61,6 +61,10 @@ extension Preview {
 extension Preset {
     init(with model: PresetRealm) {
         self.title = model.title
-        self.preview = Preview(with: model.preview)
+        if let previewRealm = model.preview {
+            self.preview = Preview(with: previewRealm)
+        } else {
+            self.preview = Preview()
+        }
     }
 }
