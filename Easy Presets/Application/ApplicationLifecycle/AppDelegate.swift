@@ -15,7 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let container = AppServicesContainer.shared
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        
+        guard !ProcessInfo.isTesting else {
+            return true 
+        }
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         if let window = self.window {

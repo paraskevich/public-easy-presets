@@ -65,6 +65,7 @@ extension Preset {
             self.preview = Preview(with: previewRealm)
         } else {
             self.preview = Preview()
+            assertionFailure("Preview must not be nil")
         }
     }
 }

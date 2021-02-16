@@ -11,7 +11,7 @@ enum RealmError: LocalizedError, CustomDebugStringConvertible {
     
     case noData
     case initializationError
-    case fileDoesntExist
+    case fileDoesntExist(fileName: String, fileExtension: String)
     case writingDataError
     case readingFileError(underlyingError: Error)
     case parsingError(underlyingError: Error)
@@ -30,8 +30,8 @@ enum RealmError: LocalizedError, CustomDebugStringConvertible {
             return "The results array is empty."
         case .initializationError:
             return "Couldn't initialise Realm."
-        case .fileDoesntExist:
-            return "Could't find a file with specified name."
+        case let .fileDoesntExist(fileName, fileExtension):
+            return "Could't find a file <\(fileName).\(fileExtension)>."
         case .writingDataError:
             return "Couldn't write data to database."
         case .readingFileError(let error):
@@ -44,8 +44,27 @@ enum RealmError: LocalizedError, CustomDebugStringConvertible {
 
 class RealmPresetsProvider: PresetsProvider {
     
+    // MARK: - Properties
+
+    var configuration: Configuration
+    
+    // MARK: - Initializer
+
+    init(configuration: Configuration) {
+        self.configuration = configuration
+    }
+
+    // MARK: - Methods
+    
     func initializeRealm() throws -> Realm {
-        let realm = try Realm()
+        let realm: Realm
+        if configuration.databaseStorage == .inMemory {
+            var configuration = Realm.Configuration()
+            configuration.inMemoryIdentifier = "presetsInMemoryRealm"
+            realm = try Realm(configuration: configuration)
+        } else {
+            realm = try Realm()
+        }
         return realm
     }
     
@@ -88,13 +107,15 @@ class RealmPresetsProvider: PresetsProvider {
         writePresetsCategories(presetsCategories, to: realm)
     }
 
-    private func read(_ file: String) throws -> Data {
-        guard let bundleURL = Bundle.main.url(forResource: file, withExtension: "json") else {
-            throw RealmError.fileDoesntExist
+    private func read(_ fileName: String, _ fileExtension: String) throws -> Data {
+        let bundle = configuration.bundle
+        guard let bundleURL = bundle.url(forResource: fileName, withExtension: fileExtension) else {
+            throw RealmError.fileDoesntExist(fileName: fileName,
+                                             fileExtension: fileExtension)
         }
         do {
-            let jsonData = try Data(contentsOf: bundleURL)
-            return jsonData
+            let data = try Data(contentsOf: bundleURL)
+            return data
         } catch {
             throw RealmError.readingFileError(underlyingError: error)
         }
@@ -102,7 +123,7 @@ class RealmPresetsProvider: PresetsProvider {
     
     private func readPresetsCategories() -> Data? {
         do {
-            let jsonData = try read("presets")
+            let jsonData = try read(configuration.fileName, configuration.fileExtension)
             return jsonData
         } catch {
             assertionFailure("\(error)")
@@ -115,7 +136,9 @@ class RealmPresetsProvider: PresetsProvider {
             let decodedData = try JSONDecoder().decode([PresetsCategoryRealm].self, from: data)
             return decodedData
         } catch {
-            assertionFailure(RealmError.parsingError(underlyingError: error).debugDescription)
+            if !ProcessInfo.isTesting {
+                assertionFailure(error.localizedDescription)
+            }
             return nil
         }
     }
@@ -124,7 +147,7 @@ class RealmPresetsProvider: PresetsProvider {
         do {
             for category in presetsCategories {
                 try database.write {
-                    database.add(category)
+                    database.add(category, update: Realm.UpdatePolicy.modified)
                 }
             }
         } catch {

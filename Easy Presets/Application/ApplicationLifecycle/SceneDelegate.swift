@@ -16,6 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
+        guard !ProcessInfo.isTesting else {
+            return
+        }
+        
         guard let windowScene = scene as? UIWindowScene else { return }
         let window = UIWindow(windowScene: windowScene)
         self.coordinator = AppFlowCoordinator(with: window)

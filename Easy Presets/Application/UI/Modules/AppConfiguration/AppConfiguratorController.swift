@@ -67,7 +67,7 @@ class AppConfiguratorController: UIViewController {
     // MARK: - Methods
     
     private func configureServices() {
-        let realmPresetsProvider = RealmPresetsProvider()
+        let realmPresetsProvider = RealmPresetsProvider(configuration: .default)
         if isDatabaseConfigured == false {
             realmPresetsProvider.configure()
             isDatabaseConfigured = true

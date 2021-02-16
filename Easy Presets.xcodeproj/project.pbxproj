@@ -14,6 +14,9 @@
 		315B22A825CC45170048D05B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 315B22A525CC45170048D05B /* Nunito-Bold.ttf */; };
 		315B22C125CF3BAC0048D05B /* AppConfiguratorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B22C025CF3BAC0048D05B /* AppConfiguratorController.swift */; };
 		315B22F425D5A7530048D05B /* presets.json in Resources */ = {isa = PBXBuildFile; fileRef = 315B22F325D5A7530048D05B /* presets.json */; };
+		315B231925D5C3850048D05B /* RealmPresetsProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B230625D5C2170048D05B /* RealmPresetsProviderTests.swift */; };
+		315B232225D5C3CC0048D05B /* validPresets.json in Resources */ = {isa = PBXBuildFile; fileRef = 315B232125D5C3CC0048D05B /* validPresets.json */; };
+		315B232A25D5C8390048D05B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315B232925D5C8390048D05B /* Configuration.swift */; };
 		3167603925B8DA2A00A5EAA7 /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167603825B8DA2A00A5EAA7 /* MyCollectionViewController.swift */; };
 		3167603E25B8DAEC00A5EAA7 /* HowItWorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167603D25B8DAEC00A5EAA7 /* HowItWorksViewController.swift */; };
 		3167604325B8DB2600A5EAA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167604225B8DB2600A5EAA7 /* SettingsViewController.swift */; };
@@ -36,6 +39,8 @@
 		31A44DD525AE566000DEEC67 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44DD425AE566000DEEC67 /* OnboardingViewController.swift */; };
 		31A44DDE25AF975100DEEC67 /* OnboardingImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A44DDD25AF975100DEEC67 /* OnboardingImages.xcassets */; };
 		31A44DE625B095F200DEEC67 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44DE525B095F200DEEC67 /* OnboardingPageView.swift */; };
+		31A7F06D25DB19FD0074320C /* invalidPresets.json in Resources */ = {isa = PBXBuildFile; fileRef = 31A7F05625D97F560074320C /* invalidPresets.json */; };
+		31A7F07225DB278A0074320C /* ProcessInfo+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A7F07125DB278A0074320C /* ProcessInfo+Extension.swift */; };
 		31C1695E25BDB24700F8206E /* PresetsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C1695D25BDB24700F8206E /* PresetsCategory.swift */; };
 		31C1696825BDB49C00F8206E /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C1696725BDB49C00F8206E /* Preset.swift */; };
 		31C1697125BDB64500F8206E /* PresetsCategoryRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C1697025BDB64500F8206E /* PresetsCategoryRealm.swift */; };
@@ -71,6 +76,9 @@
 		315B22A525CC45170048D05B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		315B22C025CF3BAC0048D05B /* AppConfiguratorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguratorController.swift; sourceTree = "<group>"; };
 		315B22F325D5A7530048D05B /* presets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = presets.json; sourceTree = "<group>"; };
+		315B230625D5C2170048D05B /* RealmPresetsProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPresetsProviderTests.swift; sourceTree = "<group>"; };
+		315B232125D5C3CC0048D05B /* validPresets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = validPresets.json; sourceTree = "<group>"; };
+		315B232925D5C8390048D05B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		3167603825B8DA2A00A5EAA7 /* MyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewController.swift; sourceTree = "<group>"; };
 		3167603D25B8DAEC00A5EAA7 /* HowItWorksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorksViewController.swift; sourceTree = "<group>"; };
 		3167604225B8DB2600A5EAA7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +107,8 @@
 		31A44DD425AE566000DEEC67 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		31A44DDD25AF975100DEEC67 /* OnboardingImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = OnboardingImages.xcassets; sourceTree = "<group>"; };
 		31A44DE525B095F200DEEC67 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
+		31A7F05625D97F560074320C /* invalidPresets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = invalidPresets.json; sourceTree = "<group>"; };
+		31A7F07125DB278A0074320C /* ProcessInfo+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+Extension.swift"; sourceTree = "<group>"; };
 		31C1695D25BDB24700F8206E /* PresetsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsCategory.swift; sourceTree = "<group>"; };
 		31C1696725BDB49C00F8206E /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
 		31C1697025BDB64500F8206E /* PresetsCategoryRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsCategoryRealm.swift; sourceTree = "<group>"; };
@@ -176,6 +186,24 @@
 			path = AppConfiguration;
 			sourceTree = "<group>";
 		};
+		315B232025D5C39D0048D05B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				315B232125D5C3CC0048D05B /* validPresets.json */,
+				31A7F05625D97F560074320C /* invalidPresets.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		315B233625D973730048D05B /* RealmPresetsProvider */ = {
+			isa = PBXGroup;
+			children = (
+				315B232025D5C39D0048D05B /* Resources */,
+				315B230625D5C2170048D05B /* RealmPresetsProviderTests.swift */,
+			);
+			path = RealmPresetsProvider;
+			sourceTree = "<group>";
+		};
 		3167604725B8DB9B00A5EAA7 /* HomeFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +259,7 @@
 		31A44D4025ACCC1C00DEEC67 /* Easy PresetsTests */ = {
 			isa = PBXGroup;
 			children = (
+				315B233625D973730048D05B /* RealmPresetsProvider */,
 				31A44D4125ACCC1C00DEEC67 /* Easy_PresetsTests.swift */,
 				31A44D4325ACCC1C00DEEC67 /* Info.plist */,
 			);
@@ -312,6 +341,7 @@
 			children = (
 				31C1695D25BDB24700F8206E /* PresetsCategory.swift */,
 				31C1696725BDB49C00F8206E /* Preset.swift */,
+				315B232925D5C8390048D05B /* Configuration.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,6 +421,7 @@
 				31A44DB625ADDAA600DEEC67 /* UIFont+Extension.swift */,
 				31A44DCE25AE48AA00DEEC67 /* UIColor+Extension.swift */,
 				3167608625BC3BC200A5EAA7 /* UIViewController+Extension.swift */,
+				31A7F07125DB278A0074320C /* ProcessInfo+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -602,6 +633,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A7F06D25DB19FD0074320C /* invalidPresets.json in Resources */,
+				315B232225D5C3CC0048D05B /* validPresets.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,11 +756,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3167607525BA294E00A5EAA7 /* FeedPresetCollectionCell.swift in Sources */,
+				31A7F07225DB278A0074320C /* ProcessInfo+Extension.swift in Sources */,
 				31A44DE625B095F200DEEC67 /* OnboardingPageView.swift in Sources */,
 				31A44D2B25ACCC1700DEEC67 /* AppDelegate.swift in Sources */,
 				3182657325C026E4003FFF93 /* AppServicesContainer.swift in Sources */,
 				31C1696825BDB49C00F8206E /* Preset.swift in Sources */,
 				3167604325B8DB2600A5EAA7 /* SettingsViewController.swift in Sources */,
+				315B232A25D5C8390048D05B /* Configuration.swift in Sources */,
 				3118A83B25BF471C002450AD /* PresetsProvider.swift in Sources */,
 				31C1695E25BDB24700F8206E /* PresetsCategory.swift in Sources */,
 				31A44DB725ADDAA600DEEC67 /* UIFont+Extension.swift in Sources */,
@@ -753,6 +788,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31A44D4225ACCC1C00DEEC67 /* Easy_PresetsTests.swift in Sources */,
+				315B231925D5C3850048D05B /* RealmPresetsProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

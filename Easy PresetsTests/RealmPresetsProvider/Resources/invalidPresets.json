@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Modern",
+        "id": "modern",
+        "goodFor": ["muted colors", "cold shades", "interiors"],
+        "presets": [
+            {
+                "title": "Modern 1",
+            },
+            {
+                "preview": {
+                    "path": "modern_2.jpg",
+                    "width": 1000,
+                    "height": 1500,
+                }
+            },
+            {
+                "title": "Modern 3",
+            },
+            {
+                "title": "Modern 4",
+                "preview": {
+                    "path": "modern_4.jpg",
+                    "width": 1300,
+                    "height": 1625,
+                }
+            },
+        ]
+    },
+]

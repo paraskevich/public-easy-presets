@@ -8,7 +8,7 @@
 import UIKit
 
 class AppServicesContainer {
-    static var shared: AppServicesContainer = AppServicesContainer(presetsProvider: RealmPresetsProvider())
+    static var shared: AppServicesContainer = AppServicesContainer(presetsProvider: RealmPresetsProvider(configuration: .default))
     
     let presetsProvider: PresetsProvider
     
