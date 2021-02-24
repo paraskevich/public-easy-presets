@@ -11,7 +11,7 @@ class FeedPresetCollectionCell: UICollectionViewCell {
     
     // MARK: - GUI
     
-    private let titleLabel: UILabel = {
+    var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .customFont(of: 20, kind: .bold)
         label.textColor = .primaryTextColor
@@ -19,7 +19,7 @@ class FeedPresetCollectionCell: UICollectionViewCell {
         return label
     }()
     
-    private let presetsCountLabel: UILabel = {
+    var presetsCountLabel: UILabel = {
         let label = UILabel()
         label.font = .customFont(of: 18, kind: .regular)
         label.textColor = .primaryTextColor
@@ -27,7 +27,7 @@ class FeedPresetCollectionCell: UICollectionViewCell {
         return label
     }()
     
-    private let previewImageView: UIImageView = {
+    var previewImageView: UIImageView = {
         let view = UIImageView()
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -37,6 +37,7 @@ class FeedPresetCollectionCell: UICollectionViewCell {
     
     // MARK: - Properties
     
+    static let cellIdentifier: String = "cellIdentifier"
     private let offset: CGFloat = 20
     
     // MARK: - Initialization
@@ -80,7 +81,7 @@ class FeedPresetCollectionCell: UICollectionViewCell {
                                                  constant: offset).isActive = true
     }
     
-    func configureCell(with viewModel: FeedPresetViewModel) {
+    func configure(with viewModel: FeedPresetViewModel) {
         titleLabel.text = viewModel.title
         presetsCountLabel.text = viewModel.presetsCount.capitalized
         previewImageView.image = viewModel.previewImage
