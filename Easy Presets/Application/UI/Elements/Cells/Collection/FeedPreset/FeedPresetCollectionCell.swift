@@ -11,23 +11,25 @@ class FeedPresetCollectionCell: UICollectionViewCell {
     
     // MARK: - GUI
     
-    var titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .customFont(of: 20, kind: .bold)
+        label.font = .customFont(of: 22, kind: .bold)
         label.textColor = .primaryTextColor
         label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    var presetsCountLabel: UILabel = {
+    private let presetsCountLabel: UILabel = {
         let label = UILabel()
-        label.font = .customFont(of: 18, kind: .regular)
+        label.font = .customFont(of: 14, kind: .semiBold)
         label.textColor = .primaryTextColor
         label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    var previewImageView: UIImageView = {
+    private let previewImageView: UIImageView = {
         let view = UIImageView()
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -48,6 +50,7 @@ class FeedPresetCollectionCell: UICollectionViewCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(presetsCountLabel)
         setConstraints()
+        setupGradient()
     }
     
     required init?(coder: NSCoder) {
@@ -56,6 +59,21 @@ class FeedPresetCollectionCell: UICollectionViewCell {
     
     // MARK: - Methods
 
+    func configure(with viewModel: FeedPresetViewModel) {
+        titleLabel.text = viewModel.title
+        presetsCountLabel.text = "\(viewModel.presetsCount) PRESETS"
+        previewImageView.image = viewModel.previewImage
+    }
+    
+    private func setupGradient() {
+        let gradient = CAGradientLayer()
+        gradient.frame = CGRect(x: 0, y: contentView.bounds.height * 3 / 4,
+                                width: contentView.bounds.width,
+                                height: contentView.bounds.height / 4)
+        gradient.colors = [UIColor.clear.cgColor, UIColor.generalBackgroundColor.withAlphaComponent(0.8).cgColor]
+        contentView.layer.insertSublayer(gradient, at: 1)
+    }
+    
     private func setConstraints() {
         
         // previewImageView constraints
@@ -66,24 +84,18 @@ class FeedPresetCollectionCell: UICollectionViewCell {
         
         // presetsCountLabel constraints
         presetsCountLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
-                                                  constant: offset).isActive = true
+                                                  constant: -offset).isActive = true
         presetsCountLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,
                                                 constant: offset).isActive = true
         presetsCountLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor,
-                                                 constant: offset).isActive = true
+                                                 constant: -offset).isActive = true
         
         // titleLabel constraints
         titleLabel.bottomAnchor.constraint(equalTo: presetsCountLabel.topAnchor,
-                                           constant: offset).isActive = true
+                                           constant: -offset / 4).isActive = true
         titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,
-                                                constant: offset).isActive = true
+                                         constant: offset).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor,
-                                                 constant: offset).isActive = true
-    }
-    
-    func configure(with viewModel: FeedPresetViewModel) {
-        titleLabel.text = viewModel.title
-        presetsCountLabel.text = viewModel.presetsCount.capitalized
-        previewImageView.image = viewModel.previewImage
+                                          constant: -offset).isActive = true
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class PresetsViewController: UIViewController {
     
@@ -13,22 +14,26 @@ class PresetsViewController: UIViewController {
     
     private enum Constants {
         static let title: String = "Presets"
+        static let loadingIndicatorHeight: CGFloat = 50
+        static let loadingIndicatorWidth: CGFloat = 50
         
         enum CollectionView {
             static let itemsPerRow: CGFloat = 1
-            static let insets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+            static let insets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
             static let itemsSpacing: CGFloat = 10
             static let numberOfSections: Int = 1
         }
     }
     
-    // MARK: - GUI
+    private enum State {
+        case begin, loading, loaded
+    }
     
-    private var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: CGRect(),
-                                              collectionViewLayout: UICollectionViewLayout())
-        return collectionView
-    }()
+    // MARK: - GUI
+    private var collectionView = UICollectionView(frame: CGRect(),
+                                                  collectionViewLayout: UICollectionViewFlowLayout())
+    
+    private var loadingIndicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: Constants.loadingIndicatorWidth, height: Constants.loadingIndicatorHeight), type: .circleStrokeSpin, color: .primaryTextColor)
     
     // MARK: - Properties
     
@@ -36,19 +41,29 @@ class PresetsViewController: UIViewController {
     private lazy var presetsProvider: PresetsProvider = appServicesContainer.presetsProvider
     private var presetsCategories: [PresetsCategory] = []
     
+    private var state: State = .begin {
+        didSet {
+            if state == .loading {
+                self.handleLoadingState()
+            } else if state == .loaded {
+                self.handleLoadedState()
+            }
+        }
+    }
+    
     // MARK: - View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("PresetsVC loaded")
         
         self.title = Constants.title
         setNavigationBarAppearance(for: self)
         
-        collectionView.backgroundColor = .generalBackgroundColor
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(FeedPresetCollectionCell.self, forCellWithReuseIdentifier: FeedPresetCollectionCell.cellIdentifier)
+        view.addSubview(collectionView)
+        view.addSubview(loadingIndicator)
+        
+        setCollectionView()
+        loadData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -56,12 +71,46 @@ class PresetsViewController: UIViewController {
         collectionView.frame = CGRect(x: 0, y: 0,
                                       width: view.frame.width,
                                       height: view.frame.height)
+        loadingIndicator.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
     }
     
     // MARK: - Methods
     
+    private func handleLoadingState() {
+        loadingIndicator.startAnimating()
+        loadingIndicator.isHidden = false
+    }
     
+    private func handleLoadedState() {
+        loadingIndicator.stopAnimating()
+        loadingIndicator.isHidden = true
+    }
     
+    private func setCollectionView() {
+        collectionView.backgroundColor = .generalBackgroundColor
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(FeedPresetCollectionCell.self, forCellWithReuseIdentifier: FeedPresetCollectionCell.cellIdentifier)
+    }
+    
+    private func loadData() {
+        state = .loading
+        presetsProvider.getPresetCategories { [weak self] presetsCategories, error in
+            guard let self = self else { return }
+            if let presetsCategories = presetsCategories {
+                self.presetsCategories = presetsCategories
+                self.state = .loaded
+                self.collectionView.reloadData()
+            } else {
+                let alert = UIAlertController(title: "Error",
+                                              message: error.debugDescription,
+                                              preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .cancel)
+                alert.addAction(action)
+                self.present(alert, animated: true)
+            }
+        }
+    }
 }
 
 // MARK: - Collection view delegate flow layout
@@ -94,15 +143,19 @@ extension PresetsViewController: UICollectionViewDelegate, UICollectionViewDataS
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Constants.CollectionView.numberOfSections
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presetsCategories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedPresetCollectionCell.cellIdentifier, for: indexPath) as! FeedPresetCollectionCell
+        cell.contentView.layer.cornerRadius = 10
+        cell.contentView.layer.masksToBounds = true
+        
         let category = presetsCategories[indexPath.row]
         let cellViewModel = FeedPresetViewModel(title: category.title,
-                                                presetsCount: String(category.presets.count),
+                                                presetsCount: category.presets.count,
                                                 previewImage: UIImage(named: category.preview.path))
         cell.configure(with: cellViewModel)
         return cell

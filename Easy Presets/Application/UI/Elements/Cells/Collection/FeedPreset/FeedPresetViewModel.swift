@@ -9,6 +9,6 @@ import UIKit
 
 struct FeedPresetViewModel {
     let title: String
-    let presetsCount: String
+    let presetsCount: Int 
     let previewImage: UIImage?
 }

@@ -1,22 +1,28 @@
 PODS:
-  - Realm (5.4.7):
-    - Realm/Headers (= 5.4.7)
-  - Realm/Headers (5.4.7)
-  - RealmSwift (5.4.7):
-    - Realm (= 5.4.7)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
+  - Realm (10.7.0):
+    - Realm/Headers (= 10.7.0)
+  - Realm/Headers (10.7.0)
+  - RealmSwift (10.7.0):
+    - Realm (= 10.7.0)
 
 DEPENDENCIES:
-  - RealmSwift (~> 5.4.7)
+  - NVActivityIndicatorView (~> 5.1.1)
+  - RealmSwift (~> 10.7.0)
 
 SPEC REPOS:
   trunk:
+    - NVActivityIndicatorView
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
-  Realm: 4bfc08e376b2e30c84ec3200ebe715574da05cc0
-  RealmSwift: ed40f371b62e8677141939e05b44a0c1a0a2d965
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  Realm: a03c41a3afbda6c197ba4dfba5428b8b54cc2df4
+  RealmSwift: 5e7abc842276d7fabd386e67afbf3efde54eb1c6
 
-PODFILE CHECKSUM: 831c2b602bc06831e959dba40a14262d3a27fe9f
+PODFILE CHECKSUM: 744d241f5842fca05b6979458470f4479c172c84
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

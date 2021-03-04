@@ -91,7 +91,6 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("OnboardingVC loaded")
         
         scrollView.delegate = self
         view.addSubview(scrollView)
@@ -172,7 +171,7 @@ class OnboardingViewController: UIViewController {
         gradient.frame = CGRect(x: 0, y: view.bounds.height / 2,
                                 width: view.bounds.width,
                                 height: view.bounds.height / 2)
-        gradient.colors = [UIColor.clear.cgColor, UIColor.generalBackgroundColor.cgColor]
+        gradient.colors = [UIColor.clear.cgColor, UIColor.generalBackgroundColor.withAlphaComponent(0.8).cgColor]
         view.layer.insertSublayer(gradient, at: 1)
     }
     

@@ -16,7 +16,7 @@ enum RealmError: LocalizedError, CustomDebugStringConvertible {
     case readingFileError(underlyingError: Error)
     case parsingError(underlyingError: Error)
     
-    var errorDescription: String {
+    var description: String {
         switch self {
         case .noData, .initializationError, .fileDoesntExist,
              .writingDataError, .readingFileError, .parsingError:
@@ -69,11 +69,10 @@ class RealmPresetsProvider: PresetsProvider {
     }
     
     func getPresetCategories(_ completion: @escaping ([PresetsCategory]?, Error?) -> ()) {
-        
         let realm: Realm
         
         do {
-            try realm = initializeRealm()
+            try realm = self.initializeRealm()
         } catch {
             completion(nil, RealmError.initializationError)
             return
