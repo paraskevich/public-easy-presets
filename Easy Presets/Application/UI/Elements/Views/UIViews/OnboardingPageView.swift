@@ -16,6 +16,7 @@ class OnboardingPageView: UIView {
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFill
+        
         return view
     }()
     

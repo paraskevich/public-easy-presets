@@ -17,6 +17,7 @@ class FeedPresetCollectionCell: UICollectionViewCell {
         label.textColor = .primaryTextColor
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
     }()
     
@@ -26,6 +27,7 @@ class FeedPresetCollectionCell: UICollectionViewCell {
         label.textColor = .primaryTextColor
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
+        
         return label
     }()
     
@@ -34,12 +36,13 @@ class FeedPresetCollectionCell: UICollectionViewCell {
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFill
+        
         return view
     }()
     
     // MARK: - Properties
     
-    static let cellIdentifier: String = "cellIdentifier"
+    static let identifier: String = "FeedPresetCollectionCellIdentifier"
     private let offset: CGFloat = 20
     
     // MARK: - Initialization

@@ -57,6 +57,7 @@ class PresetsViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = Constants.title
+        self.navigationItem.backButtonTitle = " "
         setNavigationBarAppearance(for: self)
         
         view.addSubview(collectionView)
@@ -90,7 +91,7 @@ class PresetsViewController: UIViewController {
         collectionView.backgroundColor = .generalBackgroundColor
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(FeedPresetCollectionCell.self, forCellWithReuseIdentifier: FeedPresetCollectionCell.cellIdentifier)
+        collectionView.register(FeedPresetCollectionCell.self, forCellWithReuseIdentifier: FeedPresetCollectionCell.identifier)
     }
     
     private func loadData() {
@@ -122,8 +123,8 @@ extension PresetsViewController: UICollectionViewDelegateFlowLayout {
         let widthPerItem = availableWidth / Constants.CollectionView.itemsPerRow
         
         let category = presetsCategories[indexPath.row]
-        let heightMultiplier = category.preview.height / category.preview.width
-        let heightPerItem = widthPerItem * CGFloat(heightMultiplier)
+        let heightMultiplier = CGFloat(category.preview.height) / CGFloat(category.preview.width)
+        let heightPerItem = widthPerItem * heightMultiplier
         
         return CGSize(width: widthPerItem, height: heightPerItem)
     }
@@ -149,7 +150,7 @@ extension PresetsViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedPresetCollectionCell.cellIdentifier, for: indexPath) as! FeedPresetCollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedPresetCollectionCell.identifier, for: indexPath) as! FeedPresetCollectionCell
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
         
@@ -159,6 +160,12 @@ extension PresetsViewController: UICollectionViewDelegate, UICollectionViewDataS
                                                 previewImage: UIImage(named: category.preview.path))
         cell.configure(with: cellViewModel)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let category = presetsCategories[indexPath.row]
+        let categoryViewController = CategoryViewController(with: category)
+        navigationController?.pushViewController(categoryViewController, animated: true)
     }
 }
 
