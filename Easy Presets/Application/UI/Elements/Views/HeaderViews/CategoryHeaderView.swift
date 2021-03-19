@@ -40,7 +40,7 @@ class CategoryHeaderView: UICollectionReusableView {
         return label
     }()
     
-    private let immutableLabel: UILabel = {
+    private(set) lazy var goodForLabel: UILabel = {
         let label = UILabel()
         label.text = "GOOD FOR"
         label.font = .customFont(of: 14, kind: .regular)
@@ -51,7 +51,7 @@ class CategoryHeaderView: UICollectionReusableView {
         return label
     }()
     
-    private(set) lazy var goodForLabel: UILabel = {
+    private(set) lazy var goodForListLabel: UILabel = {
         let label = UILabel()
         label.font = .customFont(of: 16, kind: .bold)
         label.numberOfLines = 3
@@ -62,7 +62,7 @@ class CategoryHeaderView: UICollectionReusableView {
         return label
     }()
     
-    private lazy var helpView: UIView = {
+    private(set) lazy var helpView: HowItWorksView = {
         let view = HowItWorksView()
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -82,8 +82,8 @@ class CategoryHeaderView: UICollectionReusableView {
         self.backgroundColor = .generalBackgroundColor
         self.addSubview(titleLabel)
         self.addSubview(presetsCountLabel)
-        self.addSubview(immutableLabel)
         self.addSubview(goodForLabel)
+        self.addSubview(goodForListLabel)
         self.addSubview(helpView)
         
         setConstraints()
@@ -98,7 +98,17 @@ class CategoryHeaderView: UICollectionReusableView {
     func configure(with model: PresetsCategory) {
         titleLabel.text = model.title
         presetsCountLabel.text = "\(model.presets.count) PRESETS"
-        goodForLabel.text = model.goodFor.joined(separator: " · ")
+        goodForListLabel.text = model.goodFor.joined(separator: " · ")
+    }
+    
+    func didScroll(with alpha: CGFloat) {
+        titleLabel.alpha = alpha
+        presetsCountLabel.alpha = alpha
+        goodForLabel.alpha = alpha
+        goodForListLabel.alpha = alpha
+        helpView.questionImageView.alpha = alpha
+        helpView.label.alpha = alpha
+        helpView.arrowImageView.alpha = alpha
     }
     
     private func setConstraints() {
@@ -120,23 +130,23 @@ class CategoryHeaderView: UICollectionReusableView {
                                                     constant: -Constants.offset).isActive = true
         
         // Immutable label
-        immutableLabel.topAnchor.constraint(greaterThanOrEqualTo: presetsCountLabel.bottomAnchor,
+        goodForLabel.topAnchor.constraint(greaterThanOrEqualTo: presetsCountLabel.bottomAnchor,
                                             constant: Constants.labelsSpacing).isActive = true
-        immutableLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
+        goodForLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                 constant: Constants.offset).isActive = true
-        immutableLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
+        goodForLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                  constant: -Constants.offset).isActive = true
         
         // Good for label
-        goodForLabel.topAnchor.constraint(equalTo: immutableLabel.bottomAnchor,
+        goodForListLabel.topAnchor.constraint(equalTo: goodForLabel.bottomAnchor,
                                           constant: Constants.labelsSpacing).isActive = true
-        goodForLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
+        goodForListLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
                                               constant: Constants.offset).isActive = true
-        goodForLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
+        goodForListLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
                                                constant: -Constants.offset).isActive = true
 
         // Help view
-        helpView.topAnchor.constraint(equalTo: goodForLabel.bottomAnchor,
+        helpView.topAnchor.constraint(equalTo: goodForListLabel.bottomAnchor,
                                           constant: Constants.labelsSpacing * 2).isActive = true
         helpView.leadingAnchor.constraint(equalTo: leadingAnchor,
                                               constant: Constants.offset).isActive = true

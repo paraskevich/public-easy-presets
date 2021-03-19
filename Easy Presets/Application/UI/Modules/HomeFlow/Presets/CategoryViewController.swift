@@ -22,6 +22,7 @@ class CategoryViewController: UIViewController {
     // MARK: - Properties
     
     private var model: PresetsCategory!
+    private var header: CategoryHeaderView!
     
     // MARK: - GUI
     
@@ -115,6 +116,7 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CategoryHeaderView.identifier, for: indexPath) as! CategoryHeaderView
         headerView.configure(with: model)
+        self.header = headerView
         
         return headerView
     }
@@ -130,5 +132,16 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
         cell.configure(with: cellViewModel)
         
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // Linear interpolation for calculating the value of alpha at the current point
+        var alpha = 1 - (1 / Constants.headerHeight) * scrollView.contentOffset.y
+        
+        if scrollView.contentOffset.y <= 0 {
+            alpha = 1
+        }
+        
+        header.didScroll(with: alpha)
     }
 }
