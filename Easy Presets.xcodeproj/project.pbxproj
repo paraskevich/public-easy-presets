@@ -24,6 +24,9 @@
 		3167607525BA294E00A5EAA7 /* FeedPresetCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167607425BA294E00A5EAA7 /* FeedPresetCollectionCell.swift */; };
 		3167607A25BA30CB00A5EAA7 /* FeedPresetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167607925BA30CB00A5EAA7 /* FeedPresetViewModel.swift */; };
 		3167608725BC3BC200A5EAA7 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3167608625BC3BC200A5EAA7 /* UIViewController+Extension.swift */; };
+		31783133260605210071976E /* FavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31783132260605210071976E /* FavoritesRepository.swift */; };
+		3178313926060BB50071976E /* LocalFavoritesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178313826060BB50071976E /* LocalFavoritesRepository.swift */; };
+		3178314A26068C3B0071976E /* FavoritesObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178314926068C3B0071976E /* FavoritesObserver.swift */; };
 		3182656E25BF5FE4003FFF93 /* RealmPresetsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182656D25BF5FE4003FFF93 /* RealmPresetsProvider.swift */; };
 		3182657325C026E4003FFF93 /* AppServicesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3182657225C026E4003FFF93 /* AppServicesContainer.swift */; };
 		31A44D2B25ACCC1700DEEC67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A44D2A25ACCC1700DEEC67 /* AppDelegate.swift */; };
@@ -91,6 +94,9 @@
 		3167607425BA294E00A5EAA7 /* FeedPresetCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresetCollectionCell.swift; sourceTree = "<group>"; };
 		3167607925BA30CB00A5EAA7 /* FeedPresetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresetViewModel.swift; sourceTree = "<group>"; };
 		3167608625BC3BC200A5EAA7 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		31783132260605210071976E /* FavoritesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepository.swift; sourceTree = "<group>"; };
+		3178313826060BB50071976E /* LocalFavoritesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFavoritesRepository.swift; sourceTree = "<group>"; };
+		3178314926068C3B0071976E /* FavoritesObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesObserver.swift; sourceTree = "<group>"; };
 		3182656D25BF5FE4003FFF93 /* RealmPresetsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPresetsProvider.swift; sourceTree = "<group>"; };
 		3182657225C026E4003FFF93 /* AppServicesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServicesContainer.swift; sourceTree = "<group>"; };
 		31A44D2725ACCC1700DEEC67 /* Easy Presets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Easy Presets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				3118A83A25BF471C002450AD /* PresetsProvider.swift */,
+				31783132260605210071976E /* FavoritesRepository.swift */,
+				3178314926068C3B0071976E /* FavoritesObserver.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -225,6 +233,14 @@
 				31CA0DAE25B8D796009B5314 /* Settings */,
 			);
 			path = HomeFlow;
+			sourceTree = "<group>";
+		};
+		3178313726060B5B0071976E /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				3178313826060BB50071976E /* LocalFavoritesRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		3182658A25C1B97A003FFF93 /* Services */ = {
@@ -333,6 +349,7 @@
 		31A44D6525ACD2F200DEEC67 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3178313726060B5B0071976E /* Repositories */,
 				31A44D6625ACD2FF00DEEC67 /* Persistence */,
 			);
 			path = Services;
@@ -801,6 +818,7 @@
 				3182657325C026E4003FFF93 /* AppServicesContainer.swift in Sources */,
 				31C1696825BDB49C00F8206E /* Preset.swift in Sources */,
 				3167604325B8DB2600A5EAA7 /* SettingsViewController.swift in Sources */,
+				3178313926060BB50071976E /* LocalFavoritesRepository.swift in Sources */,
 				315B232A25D5C8390048D05B /* Configuration.swift in Sources */,
 				31D58BEB25FA585B004D1D30 /* CategoryCollectionCell.swift in Sources */,
 				3118A83B25BF471C002450AD /* PresetsProvider.swift in Sources */,
@@ -816,11 +834,13 @@
 				31D58BF325FA5881004D1D30 /* CategoryViewModel.swift in Sources */,
 				31A44DD525AE566000DEEC67 /* OnboardingViewController.swift in Sources */,
 				31C1697125BDB64500F8206E /* PresetsCategoryRealm.swift in Sources */,
+				3178314A26068C3B0071976E /* FavoritesObserver.swift in Sources */,
 				3167607A25BA30CB00A5EAA7 /* FeedPresetViewModel.swift in Sources */,
 				31A44D2D25ACCC1700DEEC67 /* SceneDelegate.swift in Sources */,
 				315B22C125CF3BAC0048D05B /* AppConfiguratorController.swift in Sources */,
 				31C1697B25BDC00200F8206E /* PresetRealm.swift in Sources */,
 				3167604C25B8DC1300A5EAA7 /* TabBarController.swift in Sources */,
+				31783133260605210071976E /* FavoritesRepository.swift in Sources */,
 				31A44DCF25AE48AA00DEEC67 /* UIColor+Extension.swift in Sources */,
 				3167603E25B8DAEC00A5EAA7 /* HowItWorksViewController.swift in Sources */,
 				3182656E25BF5FE4003FFF93 /* RealmPresetsProvider.swift in Sources */,
