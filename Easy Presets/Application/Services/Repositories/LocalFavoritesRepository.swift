@@ -22,7 +22,7 @@ class LocalFavoritesRepository: FavoritesRepository {
     private var currentFavoritesIds: [String] = [] {
         didSet {
             if oldValue != currentFavoritesIds {
-                UserDefaults.standard.set(currentFavoritesIds, forKey: Keys.ids)
+                UserDefaults.standard.set(self.currentFavoritesIds, forKey: Keys.ids)
                 self.notifyObservers()
             }
         }
@@ -30,10 +30,16 @@ class LocalFavoritesRepository: FavoritesRepository {
     
     private lazy var observers: [ObserverEntry] = []
     
+    private let storageAccessQueue = DispatchQueue(label: "favorites.repo.storage.access.queue")
+    private let notificationQueue = DispatchQueue(label: "notification.queue")
+    
     // MARK: - Methods
     
     private func notifyObservers() {
-        observers.forEach { $0.base?.repositoryUpdated(self) }
+        notificationQueue.async { [weak self] in
+            guard let self = self else { return }
+            self.observers.forEach { $0.base?.repositoryUpdated(self) }
+        }
     }
     
     func getFavoritedItems(completion: @escaping ([PresetsCategory]?, Error?) -> ()) {
@@ -41,7 +47,9 @@ class LocalFavoritesRepository: FavoritesRepository {
     }
     
     func addToFavorites(category: PresetsCategory) {
-        currentFavoritesIds.append(category.id)
+        storageAccessQueue.async { [weak self] in
+            self?.currentFavoritesIds.append(category.id)
+        }
     }
     
     func removeFromFavorites(category: PresetsCategory) {
@@ -53,10 +61,10 @@ class LocalFavoritesRepository: FavoritesRepository {
     }
     
     func addObserver(_ observer: FavoritesObserver) {
-        if observers.contains(where: { item in item.base === observer }) {
-            return
-        } else {
-            observers.append(ObserverEntry(base: observer))
+        notificationQueue.async { [weak self] in
+            guard let self = self else { return }
+            guard !self.observers.contains(where: { item in item.base === observer }) else { return }
+            self.observers.append(ObserverEntry(base: observer))
         }
     }
 }
