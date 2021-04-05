@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18A16CF5E806F7ABB1662C50 /* Pods_Easy_PresetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959E131170F36BA49527D001 /* Pods_Easy_PresetsTests.framework */; };
 		3118A83B25BF471C002450AD /* PresetsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3118A83A25BF471C002450AD /* PresetsProvider.swift */; };
+		3134FFFB26150A1100621745 /* LocalFavoritesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3134FFFA26150A1100621745 /* LocalFavoritesRepositoryTests.swift */; };
 		315B22A625CC45170048D05B /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 315B22A325CC45170048D05B /* Nunito-Regular.ttf */; };
 		315B22A725CC45170048D05B /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 315B22A425CC45170048D05B /* Nunito-SemiBold.ttf */; };
 		315B22A825CC45170048D05B /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 315B22A525CC45170048D05B /* Nunito-Bold.ttf */; };
@@ -79,6 +80,7 @@
 /* Begin PBXFileReference section */
 		194A73FCA5DCAF8940F51BD1 /* Pods_Easy_Presets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Easy_Presets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3118A83A25BF471C002450AD /* PresetsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsProvider.swift; sourceTree = "<group>"; };
+		3134FFFA26150A1100621745 /* LocalFavoritesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFavoritesRepositoryTests.swift; sourceTree = "<group>"; };
 		315B22A325CC45170048D05B /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		315B22A425CC45170048D05B /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		315B22A525CC45170048D05B /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				315B232025D5C39D0048D05B /* Resources */,
 				315B230625D5C2170048D05B /* RealmPresetsProviderTests.swift */,
+				3134FFFA26150A1100621745 /* LocalFavoritesRepositoryTests.swift */,
 			);
 			path = RealmPresetsProvider;
 			sourceTree = "<group>";
@@ -851,6 +854,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3134FFFB26150A1100621745 /* LocalFavoritesRepositoryTests.swift in Sources */,
 				31A44D4225ACCC1C00DEEC67 /* Easy_PresetsTests.swift in Sources */,
 				315B231925D5C3850048D05B /* RealmPresetsProviderTests.swift in Sources */,
 			);

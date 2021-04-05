@@ -5,7 +5,7 @@
 //  Created by ILYA Paraskevich on 20.03.21.
 //
 
-import Foundation
+import UIKit
 
 class LocalFavoritesRepository: FavoritesRepository {
     
@@ -19,7 +19,7 @@ class LocalFavoritesRepository: FavoritesRepository {
     
     // MARK: - Properties
     
-    private var currentFavoritesIds: [String] = [] {
+    private var currentFavoritesIds: [String] {
         didSet {
             if oldValue != currentFavoritesIds {
                 UserDefaults.standard.set(self.currentFavoritesIds, forKey: Keys.ids)
@@ -33,6 +33,15 @@ class LocalFavoritesRepository: FavoritesRepository {
     private let storageAccessQueue = DispatchQueue(label: "favorites.repo.storage.access.queue")
     private let notificationQueue = DispatchQueue(label: "notification.queue")
     
+    private let presetsProvider: PresetsProvider
+    
+    // MARK: - Initializers
+    
+    init(with presets: PresetsProvider) {
+        self.currentFavoritesIds = (UserDefaults.standard.array(forKey: Keys.ids) as? [String]) ?? []
+        self.presetsProvider = presets
+    }
+    
     // MARK: - Methods
     
     private func notifyObservers() {
@@ -42,8 +51,25 @@ class LocalFavoritesRepository: FavoritesRepository {
         }
     }
     
+    private func filteredCategories(_ presetsCategories: [PresetsCategory]) -> [PresetsCategory]{
+        var categories: [PresetsCategory] = []
+        for id in currentFavoritesIds {
+            presetsCategories.forEach {
+                if $0.id == id { categories.append($0) }
+            }
+        }
+        return categories
+    }
+    
     func getFavoritedItems(completion: @escaping ([PresetsCategory]?, Error?) -> ()) {
-        
+        presetsProvider.getPresetCategories { [weak self] presetsCategories, error in
+            guard let self = self else { return }
+            guard !self.currentFavoritesIds.isEmpty else {
+                completion([], nil)
+                return
+            }
+            completion(self.filteredCategories(presetsCategories!), nil)
+        }
     }
     
     func addToFavorites(category: PresetsCategory) {
