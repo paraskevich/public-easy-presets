@@ -102,4 +102,22 @@ class LocalFavoritesRepositoryTests: XCTestCase {
         UserDefaults.standard.removeObject(forKey: currentFavoritesIdsKey)
     }
     
+    func testIsFavorited() throws {
+        // 1. Given
+        UserDefaults.standard.setValue(["fall"], forKey: currentFavoritesIdsKey)
+ 
+        // 2. When
+        let trueCategory = makeMockCategory("fall")
+        let falseCategory = makeMockCategory("summer")
+    
+        presetsProvider = MockPresetsProvider(categories: [makeMockCategory("summer"),
+                                                           makeMockCategory("fall")])
+        sut = LocalFavoritesRepository(with: presetsProvider)
+        
+        // 3. Then
+        XCTAssertTrue(sut.isFavorited(trueCategory))
+        XCTAssertFalse(sut.isFavorited(falseCategory))
+        
+        UserDefaults.standard.removeObject(forKey: currentFavoritesIdsKey)
+    }
 }

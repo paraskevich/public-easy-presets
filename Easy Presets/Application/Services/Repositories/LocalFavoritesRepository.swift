@@ -79,11 +79,16 @@ class LocalFavoritesRepository: FavoritesRepository {
     }
     
     func removeFromFavorites(category: PresetsCategory) {
-        
+        storageAccessQueue.async { [weak self] in
+            guard let index = self?.currentFavoritesIds.firstIndex(of: category.id) else { return }
+            self?.currentFavoritesIds.remove(at: index)
+        }
     }
     
     func isFavorited(_ category: PresetsCategory) -> Bool {
-        return true
+        storageAccessQueue.sync {
+            currentFavoritesIds.contains(category.id)
+        }
     }
     
     func addObserver(_ observer: FavoritesObserver) {
