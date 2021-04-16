@@ -39,6 +39,7 @@ class PresetsViewController: UIViewController {
     
     private lazy var appServicesContainer: AppServicesContainer = .shared
     private lazy var presetsProvider: PresetsProvider = appServicesContainer.presetsProvider
+    private lazy var favoritesRepository: FavoritesRepository = appServicesContainer.favoritesRepository
     private var presetsCategories: [PresetsCategory] = []
     
     private var state: State = .begin {
@@ -164,7 +165,8 @@ extension PresetsViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let category = presetsCategories[indexPath.row]
-        let categoryViewController = CategoryViewController(with: category)
+        let categoryViewController = CategoryViewController(with: category,
+                                                            favoritesRepository: favoritesRepository)
         navigationController?.pushViewController(categoryViewController, animated: true)
     }
 }

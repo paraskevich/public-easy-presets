@@ -12,4 +12,5 @@ protocol FavoritesRepository {
     func addToFavorites(category: PresetsCategory)
     func removeFromFavorites(category: PresetsCategory)
     func isFavorited(_ category: PresetsCategory) -> Bool
+    func addObserver(_ observer: FavoritesObserver)
 }

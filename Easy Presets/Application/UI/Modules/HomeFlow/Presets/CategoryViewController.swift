@@ -17,12 +17,21 @@ class CategoryViewController: UIViewController {
         static let insets = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         static let itemsSpacing: CGFloat = 10
         static let numberOfSections: Int = 1
+        static let likeImage = UIImage(named: "like")
+        static let likedImage = UIImage(named: "liked")
     }
     
     // MARK: - Properties
     
-    private var model: PresetsCategory!
+    private let model: PresetsCategory
+    private let favoritesRepository: FavoritesRepository
     private var header: CategoryHeaderView!
+    
+    private var isFavorited = false {
+        didSet {
+            setupRightBarButtonImage()
+        }
+    }
     
     // MARK: - GUI
     
@@ -31,9 +40,10 @@ class CategoryViewController: UIViewController {
     
     // MARK: - Initializers
     
-    init(with model: PresetsCategory) {
-        super.init(nibName: nil, bundle: nil)
+    init(with model: PresetsCategory, favoritesRepository: FavoritesRepository) {
         self.model = model
+        self.favoritesRepository = favoritesRepository
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -47,10 +57,15 @@ class CategoryViewController: UIViewController {
         
         self.title = model.title
         setNavigationBarAppearance(for: self)
+        setupRightBarButtonImage()
         
         self.view.backgroundColor = .generalBackgroundColor
+        
         view.addSubview(collectionView)
         setCollectionView()
+        
+        favoritesRepository.addObserver(self)
+        isFavorited = favoritesRepository.isFavorited(model)
     }
     
     override func viewDidLayoutSubviews() {
@@ -71,6 +86,30 @@ class CategoryViewController: UIViewController {
         collectionView.register(CategoryHeaderView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: CategoryHeaderView.identifier)
+    }
+    
+    private func setupRightBarButtonImage() {
+        if self.isFavorited == true {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: Constants.likedImage,
+                                                                     style: .plain,
+                                                                     target: self,
+                                                                     action: #selector(self.toggleIsFavorited))
+        } else {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: Constants.likeImage,
+                                                                     style: .plain,
+                                                                     target: self,
+                                                                     action: #selector(self.toggleIsFavorited))
+        }
+    }
+    
+    @objc private func toggleIsFavorited() {
+        if isFavorited == true {
+            favoritesRepository.removeFromFavorites(category: model)
+            isFavorited = false
+        } else {
+            favoritesRepository.addToFavorites(category: model)
+            isFavorited = true
+        }
     }
 }
 
@@ -143,5 +182,19 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
         }
         
         header.didScroll(with: alpha)
+    }
+}
+
+// MARK: - Extensions
+
+extension CategoryViewController: FavoritesObserver {
+    func repositoryUpdated(_ repository: FavoritesRepository) {
+        DispatchQueue.main.async {
+            if repository.isFavorited(self.model) == true {
+                self.isFavorited = true
+            } else {
+                self.isFavorited = false
+            }
+        }
     }
 }
