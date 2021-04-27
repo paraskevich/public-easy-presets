@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18A16CF5E806F7ABB1662C50 /* Pods_Easy_PresetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959E131170F36BA49527D001 /* Pods_Easy_PresetsTests.framework */; };
+		311714DC262F1A1900B24D6C /* AddFavoritePresetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311714DB262F1A1900B24D6C /* AddFavoritePresetsView.swift */; };
 		3118A83B25BF471C002450AD /* PresetsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3118A83A25BF471C002450AD /* PresetsProvider.swift */; };
 		3134FFFB26150A1100621745 /* LocalFavoritesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3134FFFA26150A1100621745 /* LocalFavoritesRepositoryTests.swift */; };
 		315B22A625CC45170048D05B /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 315B22A325CC45170048D05B /* Nunito-Regular.ttf */; };
@@ -79,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		194A73FCA5DCAF8940F51BD1 /* Pods_Easy_Presets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Easy_Presets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		311714DB262F1A1900B24D6C /* AddFavoritePresetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavoritePresetsView.swift; sourceTree = "<group>"; };
 		3118A83A25BF471C002450AD /* PresetsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsProvider.swift; sourceTree = "<group>"; };
 		3134FFFA26150A1100621745 /* LocalFavoritesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFavoritesRepositoryTests.swift; sourceTree = "<group>"; };
 		315B22A325CC45170048D05B /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 			children = (
 				31A44DE525B095F200DEEC67 /* OnboardingPageView.swift */,
 				31A96B5925FBE1A90074A3CE /* HowItWorksView.swift */,
+				311714DB262F1A1900B24D6C /* AddFavoritePresetsView.swift */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -823,6 +826,7 @@
 				3167604325B8DB2600A5EAA7 /* SettingsViewController.swift in Sources */,
 				3178313926060BB50071976E /* LocalFavoritesRepository.swift in Sources */,
 				315B232A25D5C8390048D05B /* Configuration.swift in Sources */,
+				311714DC262F1A1900B24D6C /* AddFavoritePresetsView.swift in Sources */,
 				31D58BEB25FA585B004D1D30 /* CategoryCollectionCell.swift in Sources */,
 				3118A83B25BF471C002450AD /* PresetsProvider.swift in Sources */,
 				31C1695E25BDB24700F8206E /* PresetsCategory.swift in Sources */,

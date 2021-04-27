@@ -11,7 +11,9 @@ class HowItWorksViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .yellow
+        setNavigationBarAppearance(for: self)
+        self.title = "How It Works"
+        view.backgroundColor = .generalBackgroundColor
     }
 
 }
